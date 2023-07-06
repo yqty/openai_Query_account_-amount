@@ -13,7 +13,7 @@ if st.button("查询"):
     headers = {"Authorization": "Bearer " + apikey, "Content-Type": "application/json"}
 
     # 请求订阅信息
-    subscription_url = "https://service-6ehx9pyq-1317411446.usw.apigw.tencentcs.com/v1/dashboard/billing/subscription"
+    subscription_url = "https://api.openai.com/v1/dashboard/billing/subscription"
     subscription_response = requests.get(subscription_url, headers=headers)
 
     # 判断请求是否成功
@@ -33,7 +33,7 @@ if st.button("查询"):
     )
 
     # 请求计费信息
-    billing_url = f"https://service-6ehx9pyq-1317411446.usw.apigw.tencentcs.com/v1/dashboard/billing/usage?start_date={start_date}&end_date={end_date}"
+    billing_url = f"https://api.openai.com/v1/dashboard/billing/usage?start_date={start_date}&end_date={end_date}"
     billing_response = requests.get(billing_url, headers=headers)
 
     # 判断请求是否成功
